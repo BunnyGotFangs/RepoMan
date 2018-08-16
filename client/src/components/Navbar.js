@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "./main.css";
-import "./noscript.css";
+import "../css/main.css";
+import "../css/noscript.css";
 
 import { update } from '../services/withUser';
 

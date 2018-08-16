@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import "./main.css";
+import "../../css/main.css";
+import "../../css/noscript.css";
 import { update } from '../../services/withUser';
 
 class LoginPage extends Component {

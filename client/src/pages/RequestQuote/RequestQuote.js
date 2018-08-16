@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import "../../css/main.css";
+import "../../css/noscript.css";
 
 
  class CreateQuotePage extends Component {

@@ -1,6 +1,6 @@
 import React from "react";
-import "./main.css";
-import "./noscript.css";
+import "../../css/main.css";
+import "../../css/noscript.css";
 
 
 const Card = props => (

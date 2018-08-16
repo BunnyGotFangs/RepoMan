@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import TextField from 'material-ui/TextField';
 import API from "../../utils/API";
-import "./main.css";
+import "../../css/main.css";
+import "../../css/noscript.css";
 // import RaisedButton from 'material-ui/RaisedButton';
 import SubmitButton from '../../components/SubmitButton';
 
