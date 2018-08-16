@@ -23,23 +23,11 @@ import "./RoleList.css";
 
 
 
-// const styles = theme => ({
-//   root: {
-//     width: '100%',
-//     marginTop: theme.spacing.unit * 3,
-//     overflowX: 'auto',
-//   },
-//   table: {
-//     minWidth: 700,
-//   },
-// });
-
-
 //Gives each item in the list an ID
 let id = 0;
-function createData(role, news, request_quote, tracking_shipment, create_delivery, wms_app, ltl_app, calendar, invoices) {
+function createData(companyID, firstName, lastName, phoneNumber, role, emailAddress) {
     id += 1;
-    return { id, role, news, request_quote, tracking_shipment, create_delivery, wms_app, ltl_app, calendar, invoices};
+    return { id, companyID, firstName, lastName, phoneNumber, role, emailAddress };
 }
 
 //Adds sorting functionality
@@ -48,14 +36,10 @@ function getSorting(order, orderBy) {
 }
 
 const columnData = [
-    { id: 'role', numeric: false, disablePadding: true, label: 'Role' },
-    { id: 'news', numeric: false, disablePadding: false, label: 'News Tile' },
-    { id: 'request_quote', numeric: false, disablePadding: false, label: 'Tracking Shipment Tile' },
-    { id: 'create_delivery', numeric: true, disablePadding: false, label: 'Create Delivery Tile' },
-    { id: 'wms_app', numeric: false, disablePadding: false, label: 'WMS App Tile' },
-    { id: 'ltl_app', numeric: false, disablePadding: false, label: 'LTL App Tile' },
-    { id: 'calendar', numeric: false, disablePadding: false, label: 'Calendar Tile' },
-    { id: 'invoices', numeric: false, disablePadding: false, label: 'Invoices Tile' },
+    { id: 'comanyID', numeric: false, disablePadding: true, label: 'Company ID' },
+    { id: 'firstName', numeric: false, disablePadding: false, label: 'First Name' },
+    { id: 'lastnName', numeric: false, disablePadding: false, label: 'Last Name' },
+    { id: 'role', numeric: false, disablePadding: false, label: 'Role' },
 ];
 
 //Renders the table to whatever sort is specified
@@ -208,14 +192,14 @@ class EnhancedTable extends React.Component {
 
         this.state = {
             order: 'asc',
-            orderBy: 'role',
+            orderBy: 'companyID',
             selected: [],
             data: [
-                createData('MVP Member', 'Yes', 'Yes', 'Yes','Yes', 'Yes','Yes','Yes'),
-                createData('Warehouse', 'Yes', 'No', 'No','No', 'Yes','No','No'),
+                createData(111, 'Jonathon', 'Engelien', 7153237605, 'Admin', 'jonathon.engelien@gmail.com'),
+                createData(112, 'James', 'Smith', 7153237605, 'Admin', 'jonathon.engelien@gmail.com'),
             ],
             page: 0,
-            rowsPerPage: 8,
+            rowsPerPage: 5,
         };
     }
 
@@ -308,16 +292,14 @@ class EnhancedTable extends React.Component {
                                                 <Checkbox checked={isSelected} />
                                             </TableCell>
                                             <TableCell component="th" scope="row" padding="none">
-                                                {n.role}
+                                                {n.companyID}
                                             </TableCell>
-                                            <TableCell string>{n.news}</TableCell>
-                                            <TableCell string>{n.request_quote}</TableCell>
-                                            <TableCell numeric>{n.tracking_shipment}</TableCell>
-                                            <TableCell string>{n.create_delivery}</TableCell>
-                                            <TableCell string>{n.wms_app}</TableCell>
-                                            <TableCell string>{n.ltl_app}</TableCell>
-                                            <TableCell string>{n.calendar}</TableCell>
-                                            <TableCell string>{n.invoices}</TableCell>
+                                            <TableCell string>{n.firstName}</TableCell>
+                                            <TableCell string>{n.lastName}</TableCell>
+                                            <TableCell numeric>{n.phoneNumber}</TableCell>
+                                            <TableCell string>{n.role}</TableCell>
+                                            <TableCell string>{n.emailAddress}</TableCell>
+                                            <TableCell string>{n.dateCreated}</TableCell>
                                         </TableRow>
                                     );
                                 })}
@@ -360,32 +342,3 @@ export default withStyles(styles)(EnhancedTable);
 
 
 
-
-////////////////// BROKEN API CALL ////////////////////
-    // componentDidMount() {
-    //     // only try loading stuff if the user is logged in.
-    //     if (!this.props.user) {
-    //         return;
-    //     }
-
-    //     axios.get('/api/stuff')
-    //         .then(res => {
-    //             this.setState({
-    //                 stuff: res.data
-    //             });
-    //         })
-    //         .catch(err => {
-    //             // if we got an error, we'll just log it and set stuff to an empty array
-    //             console.log(err);
-    //             this.setState({
-    //                 stuff: []
-    //             });
-    //         });
-    // }
-    // loadUsers = () => {
-    //     API.getUsesr()
-    //         .then(res =>
-    //             this.setState({ users: [], companyID: "", firstName: "", lastName: "", phoneNumber: "", role: "", emailAddress: "", dateCreated: "" })
-    //         )
-    //         .catch(err => console.log(err));
-    // };

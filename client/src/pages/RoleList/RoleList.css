@@ -1,0 +1,22 @@
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding-top: 50px;
+    background: #6b8c9b;
+    height: 100%;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  }
+  .wrapper {
+    min-height: 100%;
+  
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -50px;
+  }
+
+  .footer {
+    height: 50px;
+    margin-top: -50px;
+  }
