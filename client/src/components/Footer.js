@@ -21,7 +21,7 @@ const Footer = props => (
                   </ul>
                 </section>
                 <ul className="copyright">
-                  <li>&copy; Untitled. All rights reserved 2018</li>
+                  <li>&copy; MVP Logistics and Services. All rights reserved 2018</li>
                 </ul>
               </div>
             </footer>
