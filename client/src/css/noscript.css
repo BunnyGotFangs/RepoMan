@@ -13,3 +13,10 @@
 		transform: none;
 		opacity: 1;
 	}
+
+	.container {
+		/*  padding-left: 15px;
+		  padding-right: 10px; */
+		  margin-right: auto;
+		  margin-left: auto;
+		}
