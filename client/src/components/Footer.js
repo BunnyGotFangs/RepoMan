@@ -17,7 +17,7 @@ const Footer = props => (
                     <li><a href="https://www.instagram.com/mvp_logistics/" className="icon style2 fa-instagram"><span className="label">Instagram</span></a></li>
                     <li><a href="https://www.linkedin.com/company/mvpship/" className="icon style2 fa-linkedin"><span className="label">LinkedIn</span></a></li>
                     <li><a href="tel:18883905320" className="icon style2 fa-phone"><span className="label">Phone</span></a></li>
-                    <li><a href="https://www.mvplogistics.com/contact/" className="icon style2 fa-envelope-o"><span className="label">Email</span></a></li>
+                    <li><a href="mailto:info@mvpship.com" className="icon style2 fa-envelope-o"><span className="label">Email</span></a></li>
                   </ul>
                 </section>
                 <ul className="copyright">
