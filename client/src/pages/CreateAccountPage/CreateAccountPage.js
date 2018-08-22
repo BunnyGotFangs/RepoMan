@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+//import axios from 'axios';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import TextField from 'material-ui/TextField';
+//import TextField from 'material-ui/TextField';
 import API from "../../utils/API";
 import "../../css/main.css";
 import "../../css/noscript.css";
 // import RaisedButton from 'material-ui/RaisedButton';
-import SubmitButton from '../../components/SubmitButton';
+//import SubmitButton from '../../components/SubmitButton';
 
  class CreateAccountPage extends Component {
   state = {
@@ -73,118 +74,59 @@ import SubmitButton from '../../components/SubmitButton';
       });
     });
   }
-  render() {                         
+  render() {
     const { error } = this.state;
-     return (
-      <Grid fluid>
-        <Row>
-          <Col xs={6} xsOffset={3}>
-            <form onSubmit={this.handleLogin}>
-              <h1>Welcome to MVP Insight Access Request Form</h1>
-              <h4> All fields marked with and * are required.</h4>
-              {error &&
-                <div>
-                  {error}
-                </div>
-              }
-              <div>
-                <TextField
-                  name="companyName"
-                  hintText="*Company Name"
-                  floatingLabelText="*Company Name"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="companyAddress1"
-                  hintText="*Company Address Line 1"
-                  floatingLabelText="*Company Address Line 1"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="companyAddress2"
-                  hintText="Company Address Line 2"
-                  floatingLabelText="Company Address Line 2"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              
-              <div>
-                <TextField
-                  name="companyCity"
-                  hintText="*City"
-                  floatingLabelText="*City"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="companyState"
-                  hintText="*State"
-                  floatingLabelText="*State"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="companyZip"
-                  hintText="*Zip Code (5 digits)"
-                  floatingLabelText="*Zip Code (5 digits)"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="companyContact"
-                  hintText="Primary Company Contact"
-                  floatingLabelText="Primary Company Contact"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="companyContactPhone"
-                  hintText="Company Contact Phone"
-                  floatingLabelText="Company Contact Phone"
-                  onChange={this.handleInputChanged}
-                />
-                </div>
-            </form>
-          </Col>
-        </Row>
-         <Row>
-          <Col xs={6} xsOffset={3}>
-            <form onSubmit={this.handleLogin}>
-               <div>
-                <TextField
-                  name="userFirstName"
-                  hintText="*First Name"
-                  floatingLabelText="*First Name"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="userLastName"
-                  hintText="*Last Name"
-                  floatingLabelText="*Last Name"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="userTitle"
-                  hintText="Current Title"
-                  floatingLabelText="Current Title"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              
-              <div>
-              <fieldset>
+
+    return (
+
+        <body className="is-preload">
+
+
+			<header id="header">
+				<h1>Welcome to MVP Insight Access Request Form</h1>
+				<p>All fields are required. </p>
+			</header>
+
+
+<Col s={6}>
+<Row>
+<form id="signup-form" method="post" action="#">
+				<ul>
+        <input type="email" name="compnayName" id="companyName" placeholder="Company Name" />
+<br></br>
+        <input type="email" name="companyAddress1" id="companyAddress1" placeholder="Company Address" />
+ <br></br>
+        <input type="email" name="companyAddress2" id="companyAddress2" placeholder="Company Address" />
+<br></br>        
+        <input type="email" name="companyCity" id="companyCity" placeholder="City" />
+<br></br>
+        <input type="email" name="companyState" id="companyState" placeholder="State" />
+ <br></br>
+        <input type="email" name="companyZip" id="companyZip" placeholder="Postal Code" />
+
+<br></br>
+        <input type="email" name="companyURL" id="companyURL" placeholder="Company Website (URL)" />
+<br></br>
+        <input type="email" name="companyContact" id="companyContact" placeholder="Primary Contact" />
+ <br></br>
+        <input type="email" name="companyContactPhone" id="companyContactPhone" placeholder="Primary Contact Phone Number" />
+<br></br>
+</ul>
+</form>
+</Row>
+</Col>
+
+<Col s={6}>
+<Row>
+<form id="signup-form" method="post" action="#">
+<ul>
+        <input type="email" name="userFirstName" id="userFirstName" placeholder="First Name" />
+ <br></br>
+        <input type="email" name="userLastName" id="userLastName" placeholder="Last Name" />
+<br></br>        
+        <input type="email" name="userTitle" id="userTitle" placeholder="Title" />
+<br></br>
+        <fieldset>
                       <label>Role with MVP</label>
                          <select id = "myList">
                            <option value = "1">Warehouse</option>
@@ -197,54 +139,31 @@ import SubmitButton from '../../components/SubmitButton';
                            <option value = "8">MVP Admin</option>
                         </select>
             
-              </fieldset>
-              </div>
-              
-              <div>
-                <TextField
-                  name="userEmail"
-                  hintText="*Email Address"
-                  floatingLabelText="*Email Address"
-                  onChange={this.handleInputChanged}
-                />
-              </div>
-              <div>
-                <TextField
-                  name="userPhone"
-                  hintText="*Phone Number"
-                  floatingLabelText="*Phone Number"
-                  onChange={this.handleInputChanged}
-                />
-                </div>
+        </fieldset>
+ <br></br>
+        <input type="email" name="userEmail" id="userEmail" placeholder="E-mail Address" />
 
-                <div>
-                <TextField
-                  name="password"
-                  hintText="*Password"
-                  floatingLabelText="*Password"
-                  onChange={this.handleInputChanged}
-                />
-                </div>
+<br></br>
+        <input type="email" name="userPhone" id="userPhone" placeholder="Phone Number" />
+<br></br>
+        <input type="email" name="password" id="password" placeholder="Password" />
+ <br></br>
+        <input type="email" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
+<br></br>
+        <input type="submit" value="Register" />
+			  </ul>
+                          </form>
+                          </Row>
+</Col>
 
-                <div>
-                <TextField
-                  name="confirmPassword"
-                  hintText="*Confirm Password"
-                  floatingLabelText="*Confirm Password"
-                  onChange={this.handleInputChanged}
-                />
-                </div>
+
+
+              <p href="">Contact Support</p>
                 
-                <div>
-                <SubmitButton primary type="submit" onClick={this.handleLogin}>
-                  Log In
-                </SubmitButton>
-              </div>
-             </form>
-          </Col>
-        </Row>
-      </Grid>
+    </body>
+
     );
   }
 }
-export default CreateAccountPage
+
+export default CreateAccountPage;
